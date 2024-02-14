@@ -1,0 +1,20 @@
+<!-- templates/index.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Include your CSS -->
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Welcome to Flask App</h1>
+    {% if username %}
+        <h3>Hello, {{username}}</h3>
+        <form action="{{ url_for('logout') }}" method="get">
+            <button type="submit">Logout</button>
+        </form>
+    {% else %}
+        <h3>Not Authorized</h3>
+    {% endif %}
+</body>
+</html>
